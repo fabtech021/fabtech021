@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💰 Gen-Z Expense Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="genz-container">
+    <!-- Background gradient -->
+    <div class="gradient-bg"></div>
+
+    <!-- Main card -->
+    <div class="genz-card">
+      <!-- Header with emoji -->
+      <div class="genz-header">
+        <h1>💰 Gen-Z Expense Tracker</h1>
+        <p>Track your coins, flex your savings! 💸</p>
+      </div>
+
+      <!-- Add expense form -->
+      <form id="expense-form" class="genz-form">
+        <div class="input-group">
+          <input type="text" id="expense-name" placeholder="🍕 Expense Name" class="genz-input">
+          <i class="fas fa-pencil-alt genz-icon"></i>
+        </div>
+        <div class="input-group">
+          <input type="number" id="expense-amount" placeholder="💸 Amount" class="genz-input">
+          <i class="fas fa-coins genz-icon"></i>
+        </div>
+        <div class="input-group">
+          <select id="expense-category" class="genz-select">
+            <option value="">📂 Select Category</option>
+            <option value="Food">🍔 Food</option>
+            <option value="Transport">🚗 Transport</option>
+            <option value="Entertainment">🎮 Entertainment</option>
+            <option value="Utilities">💡 Utilities</option>
+            <option value="Other">🤷 Other</option>
+          </select>
+          <i class="fas fa-tag genz-icon"></i>
+        </div>
+        <div class="input-group">
+          <input type="date" id="expense-date" class="genz-input">
+          <i class="fas fa-calendar-alt genz-icon"></i>
+        </div>
+        <button type="submit" class="genz-button genz-submit">
+          <span class="genz-text">Add Expense</span>
+          <div class="genz-glitch"></div>
+        </button>
+      </form>
+
+      <!-- Holographic stats dashboard -->
+      <div class="genz-stats">
+        <div class="stat-box">
+          <div class="radial-progress" id="budget-progress">
+            <span class="stat-value">$<span id="total-amount">0</span></span>
+            <span class="stat-label">Total Spent</span>
+          </div>
+        </div>
+        <div class="stat-box">
+          <input type="number" id="budget-limit" placeholder="Set Budget" class="genz-input">
+          <button id="set-budget" class="genz-button">Set</button>
+          <div id="budget-warning" class="genz-alert hidden">Budget Exceeded!</div>
+        </div>
+      </div>
+
+      <!-- Holographic expense list -->
+      <div class="genz-list">
+        <div class="list-controls">
+          <div class="input-group">
+            <input type="text" id="search" placeholder="Search..." class="genz-input">
+            <i class="fas fa-search genz-icon"></i>
+          </div>
+          <select id="filter-category" class="genz-select">
+            <option value="">All Categories</option>
+            <option value="Food">🍔 Food</option>
+            <option value="Transport">🚗 Transport</option>
+            <option value="Entertainment">🎮 Entertainment</option>
+            <option value="Utilities">💡 Utilities</option>
+            <option value="Other">🤷 Other</option>
+          </select>
+          <button id="export-btn" class="genz-button">Export Data <i class="fas fa-file-export"></i></button>
+        </div>
+        <ul id="expenses" class="holographic-list"></ul>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
